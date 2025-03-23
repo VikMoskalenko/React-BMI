@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-         {/* <CardTitle title="My title" description="My fist description"></CardTitle> */}
+         <CardTitle title="BMI Calculator" description="Check it right now"></CardTitle>
       <BmiCalculator />
   </>
   );

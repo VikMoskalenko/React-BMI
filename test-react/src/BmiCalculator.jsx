@@ -2,11 +2,15 @@
 import React, { useState } from 'react';
 
 const BmiCalculator = () => {
+  const [color, setColor] = useState('pink'); 
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [bmi, setBmi] = useState(null);
   const [status, setStatus] = useState('');
-
+  const handleButtonClick = () => {
+    setColor("purple");  // Set color to purple
+    calculateBMI();      // Calculate BMI
+  };
   const calculateBMI = () => {
     if (!weight || !height) {
       alert('Please enter both weight and height!');
@@ -55,7 +59,10 @@ const BmiCalculator = () => {
           />
         </label>
       </div>
-      <button onClick={calculateBMI}>Calculate</button>
+      <button 
+        style={{backgroundColor: color}} 
+        onClick={handleButtonClick}
+      >Calculate</button>
       {bmi && (
         <div className='result'>
           <h3>Your BMI: {bmi}</h3>
